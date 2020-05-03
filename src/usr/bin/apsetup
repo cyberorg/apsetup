@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "AP_SSID=$1" > /home/mssadmin/.config/accesspoint.conf 
+echo "AP_PASS=$2" >> /home/mssadmin/.config/accesspoint.conf
