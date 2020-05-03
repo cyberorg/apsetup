@@ -2,25 +2,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Setup Access Point</title>
+<title>Akobox Access Point</title>
 <link href="form.css" rel="stylesheet">
 </head>
 <body>
 <div id="main">
 <div id="first">
 	<center>
-<h1>Access Point Details</h1>
-<h4>Please fill all entries.</h4>
+<h2>Setup Akobox Access Point Security</h2>
 </center>
 <form method="post" action="apsetup.php">
 
 <br>
-<center>	<input type="text" name="AP_SSID" placeholder="Enter Access Point Name"/><br></center>
+<center>	<input type="text" name="AP_SSID" placeholder="Enter Akobox WiFi network  name (SSID)" required><br></center>
 
 <br>
-<center>	<input type="text" name="AP_PASS" placeholder="Enter password"/><br></center>
-<br> <br>
-
+<center>	<input type="text" name="AP_PASS" placeholder="Enter passphrase (8 to 20 alphanumeric characters)" pattern="^[A-Za-z0-9]{8,20}$" required><br></center>
+<br> 
 <center><input type="submit" value="Submit" /></center>
 <br />
 </form>
