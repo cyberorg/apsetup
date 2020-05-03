@@ -2,7 +2,7 @@
 if test -f /home/mssadmin/.config/accesspoint.conf; then
 	. /home/mssadmin/.config/accesspoint.conf
 fi
-AP_SSID=${AP_SSID:=MSS}
+AP_SSID=${AP_SSID:=AKOBOX}
 case $1 in
 	stop)
 		create_ap --stop ap0 || true
