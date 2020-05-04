@@ -1,0 +1,4 @@
+%www-data ALL= NOPASSWD: /bin/systemctl restart apsetup
+%www-data ALL= NOPASSWD: /usr/bin/nmcli con reload AKOBOX
+%www-data ALL= NOPASSWD: /usr/bin/nmcli con up AKOBOX
+ 

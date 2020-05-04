@@ -1,3 +1,8 @@
 #!/bin/bash
-sed -i -e s"@ssid=.*@ssid=$1@g" /etc/NetworkManager/system-connections/akohome.nmconnection
-sed -i -e s"@psk=.*@psk=$2@g" /etc/NetworkManager/system-connections/akohome.nmconnection 
+sed -i -e s"@ssid=.*@ssid=$1@g" /var/www/ap/akohome.nmconnection
+sed -i -e s"@psk=.*@psk=$2@g" /var/www/ap/akohome.nmconnection
+sed -i -e s"@address1=.*@address1=$3/24,$3@g" /var/www/ap/akohome.nmconnection
+sudo /bin/systemctl restart apsetup
+sudo /usr/bin/nmcli con reload AKOBOX
+sudo /usr/bin/nmcli con up AKOBOX
+
