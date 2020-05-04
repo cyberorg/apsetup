@@ -17,5 +17,5 @@ Before=network.target
 Type=forking
 ExecStartPre=/usr/bin/mssipchangeap
 ExecStart=/bin/cp /var/www/ap/akohome.nmconnection /etc/NetworkManager/system-connections/
-TimeoutSec=0
+TimeoutSec=10
 RemainAfterExit=yes
