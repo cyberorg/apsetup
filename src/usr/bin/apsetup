@@ -1,0 +1,3 @@
+#!/bin/bash
+sed -i -e s"@ssid=.*@ssid=$1@g" /etc/NetworkManager/system-connections/akohome.nmconnection
+sed -i -e s"@psk=.*@psk=$2@g" /etc/NetworkManager/system-connections/akohome.nmconnection 
