@@ -5,7 +5,7 @@
 
 Copy the above checked out files from src/* to /
 
-`chown www-data /var/www/ap/*
+`chown www-data /var/www/ap/*`
 
 ### 2. Use mssupdate
 
