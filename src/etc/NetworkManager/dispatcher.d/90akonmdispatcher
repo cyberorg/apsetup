@@ -1,10 +1,10 @@
 #!/bin/bash
 #setup dnsmasq on IP address change
 if [ "$2" = "up" ];then
-	if test -f /var/www/htdocs/ap.conf; then
-		. /var/www/htdocs/ap.conf
+	if test -f /var/www/ap/ap.conf; then
+		. /var/www/ap/ap.conf
 		if [[ x"$NET_CONNECT == xtrue" ]]; then
-			. /usr/bin/networkvariables.sh
+			. /usr/bin/networkvariables.sh || true
 			if [ ! -z "$DHCPD_INTERFACE" ]; then
 				iptables -t nat -A POSTROUTING -o $DHCPD_INTERFACE -j MASQUERADE
 			fi
