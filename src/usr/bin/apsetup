@@ -1,7 +1,12 @@
 #!/bin/bash
-sed -i -e s"@ssid=.*@ssid=$1@g" /var/www/ap/akohome.nmconnection
-sed -i -e s"@psk=.*@psk=$2@g" /var/www/ap/akohome.nmconnection
-sed -i -e s"@address1=.*@address1=$3/24,$3@g" /var/www/ap/akohome.nmconnection
+sed -i -e s"@AP_SSID=.*@AP_SSID=$1@g" /var/www/ap/ap.conf
+sed -i -e s"@AP_PASS=.*@AP_PASS=$2@g" /var/www/ap/ap.conf
+sed -i -e s"@AP_IP=.*@AP_IP=$3/24,$3@g" /var/www/ap/ap.conf
+sed -i -e s"@NET_CONNECT=.*@NET_CONNECT=$4@g" /var/www/ap/ap.conf
+. /var/www/ap/ap.conf
+sed -i -e s"@ssid=.*@ssid=$AP_SSID@g" /var/www/ap/akohome.nmconnection
+sed -i -e s"@psk=.*@psk=$AP_PASS@g" /var/www/ap/akohome.nmconnection
+sed -i -e s"@address1=.*@address1=$AP_IP/24,$AP_IP@g" /var/www/ap/akohome.nmconnection
 sudo /bin/systemctl restart apsetup
 sudo /usr/bin/nmcli con reload AKOBOX
 sudo /usr/bin/nmcli con up AKOBOX
