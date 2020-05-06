@@ -3,10 +3,12 @@
 if [ "$2" = "up" ];then
 	if test -f /var/www/ap/ap.conf; then
 		. /var/www/ap/ap.conf
-		if [[ x"$NET_CONNECT == xtrue" ]]; then
-			. /usr/bin/networkvariables.sh || true
-			if [ ! -z "$DHCPD_INTERFACE" ]; then
+		. /usr/bin/networkvariables.sh 2>/dev/null|| true
+		if [ ! -z "$DHCPD_INTERFACE" ]; then
+			if [[ x"$NET_CONNECT" == xtrue ]]; then
 				iptables -t nat -A POSTROUTING -o $DHCPD_INTERFACE -j MASQUERADE
+			else
+				iptables -t nat -D POSTROUTING -o $DHCPD_INTERFACE -j MASQUERADE
 			fi
 		fi
 	fi

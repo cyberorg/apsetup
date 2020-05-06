@@ -1,7 +1,7 @@
 #!/bin/bash
 sed -i -e s"@AP_SSID=.*@AP_SSID=$1@g" /var/www/ap/ap.conf
 sed -i -e s"@AP_PASS=.*@AP_PASS=$2@g" /var/www/ap/ap.conf
-sed -i -e s"@AP_IP=.*@AP_IP=$3/24,$3@g" /var/www/ap/ap.conf
+sed -i -e s"@AP_IP=.*@AP_IP=$3@g" /var/www/ap/ap.conf
 sed -i -e s"@NET_CONNECT=.*@NET_CONNECT=$4@g" /var/www/ap/ap.conf
 . /var/www/ap/ap.conf
 sed -i -e s"@ssid=.*@ssid=$AP_SSID@g" /var/www/ap/akohome.nmconnection

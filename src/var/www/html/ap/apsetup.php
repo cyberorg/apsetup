@@ -17,6 +17,6 @@ echo "<br><br><center><b>Please reconnect your devices to this access point</b><
 
 $cmd = "/usr/bin/apsetup $AP_SSID $AP_PASS $AP_IP $NET_CONNECT";
 exec($cmd);
-header("refresh:5; url=http://ako.home/");
+header("refresh:50; url=http://$AP_IP/");
 ?>
 
