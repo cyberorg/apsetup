@@ -23,8 +23,8 @@
 <center>	<input type="text" name="AP_IP" value="<?php echo $ar['AP_IP']; ?>" pattern="^(?:(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(\.(?!$)|$)){4}$" required><br></center>
 <h4>Enable/Disable internet access through this Access Point</h4>
 <center>  <select id="NET_CONNECT" name="NET_CONNECT">
-    <option value="true">Enable</option>
-    <option value="false">Disable</option>
+    <option value="true" <?php if ($ar['NET_CONNECT']==true) echo 'selected="selected"';?>>Enable</option>
+    <option value="false" <?php if ($ar['NET_CONNECT']==false) echo 'selected="selected"';?>>Disable</option>
   </select><br></center>
 
 <br> 
